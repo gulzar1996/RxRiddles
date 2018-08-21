@@ -9,7 +9,8 @@ object Riddle8 {
      *
      * Use case: Make an Observable "lazy" for some time. For instance, when wanting to postpone some UI action.
      */
+    //If entire source is asked then use delay by subscription
     fun solve(source: Observable<Unit>): Observable<Unit> {
-        return source.delay(200, TimeUnit.MILLISECONDS)
+        return source.delaySubscription(200, TimeUnit.MILLISECONDS)
     }
 }

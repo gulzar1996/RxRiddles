@@ -11,6 +11,6 @@ object Riddle14 {
      */
     fun solve(source: Single<Unit>): Single<Unit> {
         return source
-                .retry(3)
+                .retry(2) { it !is IllegalArgumentException }
     }
 }
